@@ -12,7 +12,7 @@
 도커 이미지 빌드
 
 ```shell script
-docker build . -t munchkin:latest
+docker build . -t book-personalize-api:latest
 ```
 
 .env 파일은 .env.example 파일을 복사하세요.
