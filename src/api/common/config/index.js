@@ -12,7 +12,7 @@ const requireProcessEnv = name => {
 /* istanbul ignore next */
 if (process.env.NODE_ENV !== 'production') {
   const dotenv = require('dotenv-safe')
-  dotenv.load({
+  require('dotenv-safe').config({
     path: path.join(__dirname, '../../../../.env'),
     sample: path.join(__dirname, '../../../../.env.example'),
   })
@@ -39,6 +39,11 @@ const index = {
         },
       },
     },
+    naver: {
+      host: 'https://openapi.naver.com/v1/search/book_adv.json',
+      clientId: process.env.NAVER_BOOK_API_CLIENT_ID,
+      clientSecret: process.env.NAVER_BOOK_API_CLIENT_SECRET,
+    }
   },
   test: {
     syncModels: true,

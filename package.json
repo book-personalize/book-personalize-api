@@ -2,8 +2,9 @@
   "name": "book-personalize-api",
   "version": "0.0.1",
   "description": "book-personalize-api",
-  "main": "index.js",
+  "main": "src/api",
   "scripts": {
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

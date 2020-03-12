@@ -17,6 +17,7 @@ container.register({
 // register core
 container.loadModules(
   [
+    'core/**/application/*Service.js',
   ],
   {
     formatName: 'camelCase',
@@ -24,10 +25,6 @@ container.loadModules(
     cwd: path.resolve(__dirname),
   },
 )
-
-// register sequelize models
-container.register({
-})
 
 // eslint-disable-next-line no-console
 console.log(container)
