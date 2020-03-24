@@ -1,6 +1,6 @@
 version: '3'
 services:
-  goods-products-api:
+  book-personalize-api:
     image: book-personalize-api:latest
     container_name: book-personalize-api
     command: npm run dev

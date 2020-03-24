@@ -14,21 +14,17 @@ export default class BookService {
     _1 = type(start, 'number'),
     _2 = type(count, 'number'),
   ) => {
-    try {
-      const books = await this._requestNaver(bookTitle, start, count)
+    const books = await this._requestNaver(bookTitle, start, count)
 
-      if (books.total === 0) {
-        const notFoundError = new Error('NotFoundError')
-        notFoundError.code = messages.B001.code
-        notFoundError.details = messages.B001.detail
+    if (books.total === 0) {
+      const notFoundError = new Error('NotFoundError')
+      notFoundError.code = messages.B001.code
+      notFoundError.details = messages.B001.detail
 
-        throw notFoundError
-      }
-
-      return books
-    } catch (error) {
-      throw error
+      throw notFoundError
     }
+
+    return books
   }
 
   _requestNaver = (bookTitle, start, count) => {
